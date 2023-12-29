@@ -56,16 +56,16 @@ export function makeListStrucutre(option: SettingData, indexData: indexItem[], s
             row.other === "" ? "#949494" : "#333"
         }"/></svg>`;
         let statusData = {
-            bg: "#fff3f3",
-            text: "#e84e4e",
-            content: "Not Started",
+            bg: "#FFF4E8",
+            text: "#FF9E2C",
+            content: "WIP",
         };
 
         if (row.status == 1) {
             statusData = {
-                bg: "#FFF4E8",
-                text: "#FF9E2C",
-                content: "In progress",
+                bg: "#DAE9FF",
+                text: "#2C34FF",
+                content: "Awaiting review",
             };
         }
 
@@ -73,7 +73,23 @@ export function makeListStrucutre(option: SettingData, indexData: indexItem[], s
             statusData = {
                 bg: "#F4FFF8",
                 text: "#38C66B",
-                content: "Completed",
+                content: "Approved",
+            };
+        }
+
+        if (row.status == 3) {
+            statusData = {
+                bg: "#999",
+                text: "#fff",
+                content: "Developed",
+            };
+        }
+
+        if (row.status == 4) {
+            statusData = {
+                bg: "#fff3f3",
+                text: "#e84e4e",
+                content: "Deprecated",
             };
         }
 
@@ -172,7 +188,7 @@ export function makeListStrucutre(option: SettingData, indexData: indexItem[], s
                         }}
                         cornerRadius={5}
                         onClick={(e) => {
-                            if (indexData[count].status >= 2) {
+                            if (indexData[count].status >= 4) {
                                 indexData[count].status = 0;
                             } else {
                                 indexData[count].status += 1;
@@ -202,20 +218,20 @@ export function makeListStrucutre(option: SettingData, indexData: indexItem[], s
 
                 <AutoLayout width={"fill-parent"} height={"fill-parent"} fill={"#fafafa"} horizontalAlignItems={"center"} verticalAlignItems={"center"}>
                     <Text fill={"#333"} fontSize={14} fontFamily={"Gothic A1"} fontWeight={700}>
-                        Frame Name
+                        Name
                     </Text>
                 </AutoLayout>
 
                 <AutoLayout width={180} height={"fill-parent"} fill={"#fafafa"} horizontalAlignItems={"center"} verticalAlignItems={"center"}>
                     <Text fill={"#333"} fontSize={14} fontFamily={"Gothic A1"} fontWeight={700}>
-                        Frame Link
+                        Figma Link
                     </Text>
                 </AutoLayout>
 
                 {option.other === true ? (
                     <AutoLayout width={180} height={"fill-parent"} fill={"#fafafa"} horizontalAlignItems={"center"} verticalAlignItems={"center"}>
                         <Text fill={"#333"} fontSize={14} fontFamily={"Gothic A1"} fontWeight={700}>
-                            Other Link
+                            JIRA
                         </Text>
                     </AutoLayout>
                 ) : null}
