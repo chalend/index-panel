@@ -56,39 +56,39 @@ export function makeListStrucutre(option: SettingData, indexData: indexItem[], s
             row.other === "" ? "#949494" : "#333"
         }"/></svg>`;
         let statusData = {
-            bg: "#FFD700",
-            text: "#000000",
+            bg: "#FFF4E8",
+            text: "#FF9E2C",
             content: "WIP",
         };
 
         if (row.status == 1) {
             statusData = {
-                bg: "#FFA500",
-                text: "#000000",
+                bg: "#DAE9FF",
+                text: "#2C34FF",
                 content: "Awaiting review",
             };
         }
 
         if (row.status == 2) {
             statusData = {
-                bg: "#008000",
-                text: "#ffffff",
+                bg: "#F4FFF8",
+                text: "#38C66B",
                 content: "Approved",
             };
         }
 
         if (row.status == 3) {
             statusData = {
-                bg: "#0000CD",
-                text: "#ffffff",
+                bg: "#999",
+                text: "#fff",
                 content: "Developed",
             };
         }
 
         if (row.status == 4) {
             statusData = {
-                bg: "#7d7d7d",
-                text: "#ffffff",
+                bg: "#fff3f3",
+                text: "#e84e4e",
                 content: "Deprecated",
             };
         }
