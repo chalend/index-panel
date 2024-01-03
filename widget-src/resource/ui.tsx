@@ -100,37 +100,23 @@ export function makeListStrucutre(option: SettingData, indexData: indexItem[], s
         if (row.otherEdit === true) {
             otherLinkStructure = (
                 <AutoLayout padding={10} width={180} height={"fill-parent"} horizontalAlignItems={"center"} verticalAlignItems={"center"}>
-                    <SVG src={linkIcon}></SVG>
-                    <Input
-                        value={row.other}
-        
-                        onTextEditEnd={(e) => {
-                            if (e.characters !== "") {
-                                let urlRegex = "^(?!mailto:)(?:(?:http|https|ftp)://)(?:\\S+(?::\\S*)?@)?(?:(?:(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[0-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z\\u00a1-\\uffff0-9]+-?)*[a-z\\u00a1-\\uffff0-9]+)(?:\\.(?:[a-z\\u00a1-\\uffff0-9]+-?)*[a-z\\u00a1-\\uffff0-9]+)*(?:\\.(?:[a-z\\u00a1-\\uffff]{2,})))|localhost)(?::\\d{2,5})?(?:(/|\\?|#)[^\\s]*)?$";
-                                let url = new RegExp(urlRegex, "i");
-
-                                if (url.test(e.characters) === true) {
-                                    indexData[count].other = e.characters;
-                                    indexData[count].otherEdit = false;
-                                    setIndexData(indexData);
-                                } else {
-                                    figma.notify("You must enter only text that is available as a link.");
-                                }
-                            }
+                    <Text href={baseURL + row.name.substring(0,7)} fontSize={16} fontWeight={700} fontFamily={"Gothic A1"} width={"fill-parent"} fill="#00B0FF">
+                        {row.name.substring(0, 7)}
+                    </Text>
+                    <SVG
+                        src={pencli}
+                        onClick={(e) => {
+                            indexData[count].otherEdit = true;
+                            setIndexData(indexData);
                         }}
-                        fontSize={12}
-                        fontWeight={500}
-                        fontFamily={"Gothic A1"}
-                        width={"fill-parent"}
-                        fill="#333"
-                    />
+                    ></SVG>
                 </AutoLayout>
             );
         } else {
             otherLinkStructure = (
                 <AutoLayout padding={10} width={180} height={"fill-parent"} horizontalAlignItems={"center"} verticalAlignItems={"center"}>
-                    <Text href={row.other} fontSize={12} fontWeight={500} fontFamily={"Gothic A1"} width={"fill-parent"} fill="#333">
-                        {row.other === "" ? row.other : row.other.substring(0, 20) + "..."}
+                    <Text href={baseURL + row.name.substring(0,7)} fontSize={16} fontWeight={700} fontFamily={"Gothic A1"} width={"fill-parent"} fill="#00B0FF">
+                        {row.name.substring(0, 7)}
                     </Text>
                     <SVG
                         src={pencli}
