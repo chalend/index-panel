@@ -24,7 +24,7 @@ export function ruleText(option: SettingData) {
                     Rule : {option.rule} with{" "}
                 </Text>
                 <AutoLayout
-                    fill={"#BCE6FF"}
+                    fill={"#DAF1FF"}
                     padding={{
                         vertical: 4,
                         horizontal: 8,
@@ -131,7 +131,7 @@ export function makeListStrucutre(option: SettingData, indexData: indexItem[], s
 
         let structure = (
             <AutoLayout key={count} width={"fill-parent"} stroke={"#e0e0e0"} strokeWidth={1} strokeAlign={"center"} strokeDashPattern={[2, 2]}>
-                <AutoLayout width={100} padding={10} height={"fill-parent"} fill={"#BCE6FF"} horizontalAlignItems={"center"} verticalAlignItems={"center"}>
+                <AutoLayout width={100} padding={10} height={"fill-parent"} fill={"#DAF1FF"} horizontalAlignItems={"center"} verticalAlignItems={"center"}>
                     <Text fill={"#333"} fontSize={16} fontFamily={"Gothic A1"} fontWeight={700}>
                         {count + 1}
                     </Text>
@@ -198,7 +198,7 @@ export function makeListStrucutre(option: SettingData, indexData: indexItem[], s
     return (
         <AutoLayout name="list-wrap" width={"fill-parent"} stroke={"#f1f1f1"} strokeWidth={1} cornerRadius={10} direction={"vertical"}>
             <AutoLayout name="head" width={"fill-parent"} height={41} stroke={"#e0e0e0"} strokeWidth={1} strokeAlign={"center"}>
-                <AutoLayout width={100} height={"fill-parent"} fill={"#BCE6FF"} horizontalAlignItems={"center"} verticalAlignItems={"center"}>
+                <AutoLayout width={100} height={"fill-parent"} fill={"#DAF1FF"} horizontalAlignItems={"center"} verticalAlignItems={"center"}>
                     <Text fill={"#333"} fontSize={14} fontFamily={"Gothic A1"} fontWeight={700}>
                         #
                     </Text>
