@@ -103,13 +103,13 @@ export function makeListStrucutre(option: SettingData, indexData: indexItem[], s
                     <Text href={baseURL + row.name.substring(0,7)} fontSize={16} fontWeight={700} fontFamily={"Gothic A1"} width={"fill-parent"} fill="#00B0FF">
                         {row.name.substring(0, 7)}
                     </Text>
-                    <SVG
+                    {/* <SVG
                         src={pencli}
                         onClick={(e) => {
                             indexData[count].otherEdit = true;
                             setIndexData(indexData);
                         }}
-                    ></SVG>
+                    ></SVG> */}
                 </AutoLayout>
             );
         } else {
@@ -118,13 +118,13 @@ export function makeListStrucutre(option: SettingData, indexData: indexItem[], s
                     <Text href={baseURL + row.name.substring(0,7)} fontSize={16} fontWeight={700} fontFamily={"Gothic A1"} width={"fill-parent"} fill="#00B0FF">
                         {row.name.substring(0, 7)}
                     </Text>
-                    <SVG
+                    {/* <SVG
                         src={pencli}
                         onClick={(e) => {
                             indexData[count].otherEdit = true;
                             setIndexData(indexData);
                         }}
-                    ></SVG>
+                    ></SVG> */}
                 </AutoLayout>
             );
         }
