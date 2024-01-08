@@ -30,7 +30,7 @@ function indexWidget() {
             {
                 itemType: "action",
                 propertyName: "setting",
-                tooltip: "Setting",
+                tooltip: "Settings",
             },
             {
                 itemType: "action",
@@ -40,13 +40,13 @@ function indexWidget() {
             {
                 itemType: "action",
                 propertyName: "creat",
-                tooltip: "Creat new Index",
+                tooltip: "Create new Index",
             },
-            {
-                itemType: "action",
-                propertyName: "csv",
-                tooltip: "Export CSV",
-            },
+            // {
+            //     itemType: "action",
+            //     propertyName: "csv",
+            //     tooltip: "Export CSV",
+            // },
         ],
         ({ propertyName, propertyValue }) => {
             if (propertyName === "setting") {
@@ -171,7 +171,7 @@ function indexWidget() {
                 }}
             >
                 <Text fill={"#333"} fontFamily={"Gothic A1"} fontSize={20} fontWeight={800} horizontalAlignText={"center"}>
-                    Create index lists!&#10;You can manage your page efficiently.
+                   Manage your page efficiently with an index
                 </Text>
 
                 <AutoLayout
@@ -190,7 +190,7 @@ function indexWidget() {
                     }}
                 >
                     <Text fill={"#fff"} fontFamily={"Gothic A1"} fontSize={14} fontWeight={700}>
-                        Setting and start
+                        Create Index
                     </Text>
                 </AutoLayout>
             </AutoLayout>

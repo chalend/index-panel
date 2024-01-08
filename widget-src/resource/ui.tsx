@@ -24,7 +24,7 @@ export function ruleText(option: SettingData) {
                     Rule : {option.rule} with{" "}
                 </Text>
                 <AutoLayout
-                    fill={"#f0ebfd"}
+                    fill={"#DAF1FF"}
                     padding={{
                         vertical: 4,
                         horizontal: 8,
@@ -48,7 +48,7 @@ export function ruleText(option: SettingData) {
 // list structure maker
 export function makeListStrucutre(option: SettingData, indexData: indexItem[], setIndexData: Function, pageName: boolean, sectionName: boolean) {
     const arrowRight = `<svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.64557 3.89733C6.84034 3.70158 7.15693 3.70079 7.35267 3.89557L11.6677 8.18916C11.762 8.283 11.815 8.41055 11.815 8.54359C11.815 8.67663 11.762 8.80418 11.6677 8.89802L7.35267 13.1916C7.15693 13.3864 6.84034 13.3856 6.64557 13.1899C6.45079 12.9941 6.45158 12.6775 6.64733 12.4828L10.6061 8.54359L6.64733 4.60443C6.45158 4.40966 6.45079 4.09307 6.64557 3.89733Z" fill="#333"/></svg>`;
-    const pencli = `<svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.5558 4.51626C13.6399 4.43208 13.7746 4.43208 13.8587 4.51626L14.9933 5.65082L14.9986 5.6561C15.0812 5.73663 15.0893 5.86982 14.998 5.96532L13.9787 6.98457L12.5331 5.53893L13.5558 4.51626ZM14.6984 3.67657C14.1505 3.12864 13.264 3.12864 12.7161 3.67657L11.2736 5.11908C11.2538 5.13888 11.2357 5.15972 11.2192 5.18144L3.93976 12.453C3.82827 12.5643 3.76562 12.7155 3.76562 12.873V15.1584C3.76562 15.4863 4.03146 15.7521 4.35938 15.7521H6.6447C6.80218 15.7521 6.9532 15.6896 7.06455 15.5782L14.4878 8.15496C14.4899 8.15292 14.4919 8.15087 14.4939 8.14881L15.8411 6.8016L15.8464 6.79625C16.3843 6.24455 16.3928 5.36005 15.8307 4.80881L14.6984 3.67657ZM13.1391 7.8243L11.6972 6.38244L4.95312 13.1192V14.5646H6.39876L13.1391 7.8243Z" fill="#6436EA"/></svg>`;
+    const pencli = `<svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.5558 4.51626C13.6399 4.43208 13.7746 4.43208 13.8587 4.51626L14.9933 5.65082L14.9986 5.6561C15.0812 5.73663 15.0893 5.86982 14.998 5.96532L13.9787 6.98457L12.5331 5.53893L13.5558 4.51626ZM14.6984 3.67657C14.1505 3.12864 13.264 3.12864 12.7161 3.67657L11.2736 5.11908C11.2538 5.13888 11.2357 5.15972 11.2192 5.18144L3.93976 12.453C3.82827 12.5643 3.76562 12.7155 3.76562 12.873V15.1584C3.76562 15.4863 4.03146 15.7521 4.35938 15.7521H6.6447C6.80218 15.7521 6.9532 15.6896 7.06455 15.5782L14.4878 8.15496C14.4899 8.15292 14.4919 8.15087 14.4939 8.14881L15.8411 6.8016L15.8464 6.79625C16.3843 6.24455 16.3928 5.36005 15.8307 4.80881L14.6984 3.67657ZM13.1391 7.8243L11.6972 6.38244L4.95312 13.1192V14.5646H6.39876L13.1391 7.8243Z" fill="#000"/></svg>`;
     let listStructure: any[] = [];
 
     indexData.forEach((row, count) => {
@@ -56,94 +56,82 @@ export function makeListStrucutre(option: SettingData, indexData: indexItem[], s
             row.other === "" ? "#949494" : "#333"
         }"/></svg>`;
         let statusData = {
-            bg: "#FFF4E8",
-            text: "#FF9E2C",
+            bg: "#FFD700",
+            text: "#000000",
             content: "WIP",
         };
 
         if (row.status == 1) {
             statusData = {
-                bg: "#DAE9FF",
-                text: "#2C34FF",
+                bg: "#FFA500",
+                text: "#000000",
                 content: "Awaiting review",
             };
         }
 
         if (row.status == 2) {
             statusData = {
-                bg: "#F4FFF8",
-                text: "#38C66B",
+                bg: "#008000",
+                text: "#ffffff",
                 content: "Approved",
             };
         }
 
         if (row.status == 3) {
             statusData = {
-                bg: "#999",
-                text: "#fff",
+                bg: "#0000CD",
+                text: "#ffffff",
                 content: "Developed",
             };
         }
 
         if (row.status == 4) {
             statusData = {
-                bg: "#fff3f3",
-                text: "#e84e4e",
+                bg: "#7d7d7d",
+                text: "#ffffff",
                 content: "Deprecated",
             };
         }
 
         let otherLinkStructure;
 
+        const baseURL = "https://akur8.atlassian.net/browse/";
+
         if (row.otherEdit === true) {
             otherLinkStructure = (
                 <AutoLayout padding={10} width={180} height={"fill-parent"} horizontalAlignItems={"center"} verticalAlignItems={"center"}>
-                    <SVG src={linkIcon}></SVG>
-                    <Input
-                        value={row.other}
-                        placeholder="-"
-                        onTextEditEnd={(e) => {
-                            if (e.characters !== "") {
-                                let urlRegex = "^(?!mailto:)(?:(?:http|https|ftp)://)(?:\\S+(?::\\S*)?@)?(?:(?:(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[0-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z\\u00a1-\\uffff0-9]+-?)*[a-z\\u00a1-\\uffff0-9]+)(?:\\.(?:[a-z\\u00a1-\\uffff0-9]+-?)*[a-z\\u00a1-\\uffff0-9]+)*(?:\\.(?:[a-z\\u00a1-\\uffff]{2,})))|localhost)(?::\\d{2,5})?(?:(/|\\?|#)[^\\s]*)?$";
-                                let url = new RegExp(urlRegex, "i");
-
-                                if (url.test(e.characters) === true) {
-                                    indexData[count].other = e.characters;
-                                    indexData[count].otherEdit = false;
-                                    setIndexData(indexData);
-                                } else {
-                                    figma.notify("You must enter only text that is available as a link.");
-                                }
-                            }
-                        }}
-                        fontSize={12}
-                        fontWeight={500}
-                        fontFamily={"Gothic A1"}
-                        width={"fill-parent"}
-                        fill="#333"
-                    />
-                </AutoLayout>
-            );
-        } else {
-            otherLinkStructure = (
-                <AutoLayout padding={10} width={180} height={"fill-parent"} horizontalAlignItems={"center"} verticalAlignItems={"center"}>
-                    <Text href={row.other} fontSize={12} fontWeight={500} fontFamily={"Gothic A1"} width={"fill-parent"} fill="#333">
-                        {row.other === "" ? row.other : row.other.substring(0, 20) + "..."}
+                    <Text href={baseURL + row.name.substring(0,7)} fontSize={16} fontWeight={700} fontFamily={"Gothic A1"} width={"fill-parent"} fill="#00B0FF">
+                        {row.name.substring(0, 7)}
                     </Text>
-                    <SVG
+                    {/* <SVG
                         src={pencli}
                         onClick={(e) => {
                             indexData[count].otherEdit = true;
                             setIndexData(indexData);
                         }}
-                    ></SVG>
+                    ></SVG> */}
+                </AutoLayout>
+            );
+        } else {
+            otherLinkStructure = (
+                <AutoLayout padding={10} width={180} height={"fill-parent"} horizontalAlignItems={"center"} verticalAlignItems={"center"}>
+                    <Text href={baseURL + row.name.substring(0,7)} fontSize={16} fontWeight={700} fontFamily={"Gothic A1"} width={"fill-parent"} fill="#00B0FF">
+                        {row.name.substring(0, 7)}
+                    </Text>
+                    {/* <SVG
+                        src={pencli}
+                        onClick={(e) => {
+                            indexData[count].otherEdit = true;
+                            setIndexData(indexData);
+                        }}
+                    ></SVG> */}
                 </AutoLayout>
             );
         }
 
         let structure = (
             <AutoLayout key={count} width={"fill-parent"} stroke={"#e0e0e0"} strokeWidth={1} strokeAlign={"center"} strokeDashPattern={[2, 2]}>
-                <AutoLayout width={100} padding={10} height={"fill-parent"} fill={"#F9F6FF"} horizontalAlignItems={"center"} verticalAlignItems={"center"}>
+                <AutoLayout width={100} padding={10} height={"fill-parent"} fill={"#DAF1FF"} horizontalAlignItems={"center"} verticalAlignItems={"center"}>
                     <Text fill={"#333"} fontSize={16} fontFamily={"Gothic A1"} fontWeight={700}>
                         {count + 1}
                     </Text>
@@ -210,9 +198,9 @@ export function makeListStrucutre(option: SettingData, indexData: indexItem[], s
     return (
         <AutoLayout name="list-wrap" width={"fill-parent"} stroke={"#f1f1f1"} strokeWidth={1} cornerRadius={10} direction={"vertical"}>
             <AutoLayout name="head" width={"fill-parent"} height={41} stroke={"#e0e0e0"} strokeWidth={1} strokeAlign={"center"}>
-                <AutoLayout width={100} height={"fill-parent"} fill={"#F9F6FF"} horizontalAlignItems={"center"} verticalAlignItems={"center"}>
+                <AutoLayout width={100} height={"fill-parent"} fill={"#DAF1FF"} horizontalAlignItems={"center"} verticalAlignItems={"center"}>
                     <Text fill={"#333"} fontSize={14} fontFamily={"Gothic A1"} fontWeight={700}>
-                        No.
+                        #
                     </Text>
                 </AutoLayout>
 
