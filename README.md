@@ -1,36 +1,18 @@
-Below are the steps to get your widget running. You can also find instructions at:
+DesignOps tool for my organization, AKUR8.  Index Panel is a Figma widget that auto-generates an index of your Figma frames to make large projects easy to navigate for devs, PMs, and designers.
 
-https://www.figma.com/widget-docs/setup-guide/
+It's a smart index that includes frame names, figma hyperlinks, JIRA links, and an easy-to-update status column.
 
-This widget template uses Typescript and NPM, two standard tools in creating JavaScript applications.
+Thank you Lovefields for making the original widget <3
 
-First, download Node.js which comes with NPM. This will allow you to install TypeScript and other
-libraries. You can find the download link here:
+INITIAL SETUP
+(Figma local installation)
 
-https://nodejs.org/en/download/
+1. Download this repository by going to the green "Code" button on Github, then choosing "Download ZIP"
+2. Unzip the repository and store it wherever you'd like
+3. Open any Figma project and go to the "Widgets" menu in the upper left
+4. Under "Development", choose "Import widget from manifest..."
+5. Now, find the "index-panel" folder you just unzipped and double-click on the file "manifest.json"
 
-Next, install TypeScript, esbuild and the latest type definitions by running:
+& you're done!
 
-npm install
-
-If you are familiar with JavaScript, TypeScript will look very familiar. In fact, valid JavaScript code
-is already valid Typescript code.
-
-TypeScript adds type annotations to variables. This allows code editors such as Visual Studio Code
-to provide information about the Figma API while you are writing code, as well as help catch bugs
-you previously didn't notice.
-
-For more information, visit https://www.typescriptlang.org/
-
-Using TypeScript requires a compiler to convert TypeScript (widget-src/code.tsx) into JavaScript (dist/code.js)
-for the browser to run. We use esbuild to do this for us.
-
-We recommend writing TypeScript code using Visual Studio code:
-
-1. Download Visual Studio Code if you haven't already: https://code.visualstudio.com/.
-2. Open this directory in Visual Studio Code.
-3. Compile TypeScript to JavaScript: Run the "Terminal > Run Build Task..." menu item,
-   then select "npm: watch". You will have to do this again every time
-   you reopen Visual Studio Code.
-
-That's it! Visual Studio Code will regenerate the JavaScript file every time you save.
+For future use, you can find index-panel in the Widgets menu
